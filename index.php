@@ -1,4 +1,8 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     $hotels = [
         [
             'name' => 'Hotel Belvedere',
@@ -47,6 +51,11 @@
         <title>PHP Hotel</title>
     </head>
     <body>
-        
+        <?php foreach($hotels as $key => $hotel){?>
+            <?php foreach($hotel as $index => $item){?>
+                <?php echo $index." => ".$item."<br/>"; ?>
+            <?php } ?>
+            <?php echo "<br/>"; ?>
+        <?php } ?>
     </body>
 </html>
